@@ -48,7 +48,7 @@ SCRIPTS = scripts
 SOURCE = f"https://github.com/{GHUSERNAME}/smarty-left-pad/"
 URL = f"https://github.com/{GHUSERNAME}/smarty-left-pad"
 THANKS_URL = f"https://github.com/{GHUSERNAME}/smarty-left-pad"
-ABOUTME_URL = "https://github.com/{GHUSERNAME}"
+ABOUTME_URL = f"https://github.com/{GHUSERNAME}"
 VERSION = None
 
 EXTRAS = {  }
@@ -127,8 +127,8 @@ class UploadCommand(Command):
         os.system("twine upload dist/*")
 
         self.status("Pushing git tags... (not really)")
-        # os.system(f"git tag v{about['__version__']}")
-        # os.system("git push --tags")
+        os.system(f"git tag v{about['__version__']}")
+        os.system("git push --tags")
 
         sys.exit()
 
